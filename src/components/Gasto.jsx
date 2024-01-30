@@ -24,7 +24,7 @@ salud:IconoSalud,
 suscripciones:IconoSuscripciones,   
 }
 
-function Gasto({gasto,setGastoEditar}) {
+function Gasto({gasto,setGastoEditar,eliminarGasto}) {
 
     const {categoria,nombre,cantidad,id,fecha}=gasto;
 
@@ -41,7 +41,10 @@ function Gasto({gasto,setGastoEditar}) {
     const trailingActions = () => {
       return (
         <TrailingActions>
-          <SwipeAction onClick={() => console.log("eliminar")}>
+          <SwipeAction onClick={() => eliminarGasto(id)}
+           destructive={true}           
+          
+          >
             Eliminar
           </SwipeAction>
         </TrailingActions>
